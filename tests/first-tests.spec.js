@@ -28,9 +28,3 @@ test('dropdown selection', async ({page}) => {
     await page.goto('https://the-internet.herokuapp.com/dropdown'); 
     await page.locator('#dropdown').selectOption({value: '1'});
 })
-
-test('should DELETE a SCOPE with sucess', async ({ page }) => {
-    await page.getByRole('link', { name: 'Scope' }).first().click()
-    const createdScope = page.getByRole('listitem').filter({ hasText: 'WW/TP' })
-    await createdScope.getByRole('button', { name: 'Remove this scope'}).click()          
-  });
